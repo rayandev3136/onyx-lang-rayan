@@ -1,0 +1,10 @@
+// @description Time utilities: now, sleep, format
+// @version 0.1.0
+// @author Onyx Team
+// @license MIT
+
+// Time utilities
+
+const now    = native("time.now");
+const sleep  = native("time.sleep");
+const format = native("time.format");

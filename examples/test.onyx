@@ -1,0 +1,70 @@
+// اختبار نظام الأنواع في Onyx
+
+say("=== Onyx v0.3 — Type System ===");
+
+// 1. أنواع أساسية
+set x: int = 10;
+set pi: float = 3.14;
+set name: string = "Onyx";
+set active: bool = true;
+
+say("x =", x);
+say("pi =", pi);
+say("name =", name);
+say("active =", active);
+
+// 2. أنواع مركّبة
+set nums: list[int] = [1, 2, 3, 4, 5];
+set person: dict[string, int] = {"age": 1, "level": 5};
+
+say("nums =", nums);
+say("person =", person);
+
+// 3. دالة مع أنواع
+fn add(a: int, b: int) -> int {
+    return a + b;
+}
+
+say("add(3, 4) =", add(3, 4));
+
+fn greet(name: string) -> string {
+    return "مرحبا، " + name;
+}
+
+say(greet("Onyx"));
+
+// 4. دالة بدون أنواع (ديناميكية)
+fn identity(x) {
+    return x;
+}
+
+say("identity(5) =", identity(5));
+say("identity(\"نص\") =", identity("نص"));
+
+// 5. حساب مجموع قائمة
+fn sum_list(lst: list[int]) -> int {
+    set total: int = 0;
+    for n in lst {
+        total = total + n;
+    }
+    return total;
+}
+
+say("sum_list([1,2,3,4,5]) =", sum_list([1, 2, 3, 4, 5]));
+
+// 6. فيبوناتشي
+fn fib(n: int) -> int {
+    if (n <= 1) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+say("fib(10) =", fib(10));
+
+// 7. حلقة
+for i in 1..4 {
+    say("i =", i);
+}
+
+say("\n=== كل الفحوص نجحت ===");

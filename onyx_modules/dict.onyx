@@ -1,0 +1,12 @@
+// @description Dict utilities: merge, get, items, remove, size
+// @version 0.1.0
+// @author Onyx Team
+// @license MIT
+
+// Dict utilities
+
+const merge   = native("dict.merge");
+const get     = native("dict.get");
+const items   = native("dict.items");
+const remove  = native("dict.remove");
+const size    = native("dict.size");

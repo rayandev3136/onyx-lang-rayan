@@ -1,0 +1,30 @@
+// اختبار نظام الوحدات
+
+use math;
+
+say("=== اختبار وحدة math ===");
+say("π =", math.pi);
+say("e =", math.e);
+say("√16 =", math.sqrt(16));
+say("√2 =", math.sqrt(2));
+say("2^10 =", math.pow(2, 10));
+say("sin(0) =", math.sin(0));
+say("cos(0) =", math.cos(0));
+say("floor(3.7) =", math.floor(3.7));
+say("ceil(3.2) =", math.ceil(3.2));
+say("abs(-5) =", math.abs(-5));
+say("max(3, 7) =", math.max(3, 7));
+say("min(3, 7) =", math.min(3, 7));
+say("round(3.6) =", math.round(3.6));
+
+// استخدام في حساب
+fn distance(x1, y1, x2, y2) {
+    set dx = x2 - x1;
+    set dy = y2 - y1;
+    return math.sqrt(dx * dx + dy * dy);
+}
+
+say("\n=== المسافة بين نقطتين ===");
+say("distance((0,0), (3,4)) =", distance(0, 0, 3, 4));
+
+say("\n=== نجح ===");

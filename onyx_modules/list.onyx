@@ -1,0 +1,19 @@
+// @description List utilities: sort, reverse, contains, index_of, slice, first, last
+// @version 0.1.0
+// @author Onyx Team
+// @license MIT
+
+// List utilities
+
+const sort      = native("list.sort");
+const reverse   = native("list.reverse");
+const contains  = native("list.contains");
+const index_of  = native("list.index_of");
+const slice     = native("list.slice");
+const first     = native("list.first");
+const last      = native("list.last");
+const concat    = native("list.concat");
+const repeat    = native("list.repeat");
+const sum       = native("list.sum");
+const min       = native("list.min");
+const max       = native("list.max");

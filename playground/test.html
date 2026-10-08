@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pyodide Local Test</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #0a0a15; color: #e8e8f0; }
+        pre { white-space: pre-wrap; line-height: 1.6; }
+        .ok { color: #4ade80; }
+        .err { color: #f87171; }
+    </style>
+</head>
+<body>
+    <h1>Pyodide Local Test</h1>
+    <pre id="out">Loading...</pre>
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.5/full/pyodide.js"></script>
+    <script>
+        (async () => {
+            const out = document.getElementById('out');
+            const log = (msg, cls) => {
+                const span = document.createElement('span');
+                if (cls) span.className = cls;
+                span.textContent = msg + '\n';
+                out.appendChild(span);
+            };
+
+            out.textContent = '';
+            log('Step 1: pyodide.js loaded');
+
+            try {
+                const indexURL = location.origin + location.pathname.replace(/\/[^\/]*$/, '/pyodide/');
+                log('  indexURL = ' + indexURL);
+
+                const py = await loadPyodide();
+                log('Step 2: pyodide runtime initialized', 'ok');
+
+                const result = py.runPython('1 + 1');
+                log('Step 3: 1 + 1 = ' + result);
+
+                const v = py.runPython('import sys; sys.version');
+                log('Step 4: Python version = ' + v.split(' ')[0]);
+
+                log('');
+                log('=== ALL GOOD ===', 'ok');
+            } catch (e) {
+                log('');
+                log('ERROR: ' + (e.message || e), 'err');
+                log('Stack: ' + (e.stack || ''), 'err');
+                console.error(e);
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+set count = 10;
+set name = "Onyx";
+set nums = [1, 2, 3];
+
+say(coutn);
+say(nmae);
+say(numbres);
+
+fn calculate(x) {
+    return x * 2;
+}
+
+say(calcualte(5));
+say(calculat(5));

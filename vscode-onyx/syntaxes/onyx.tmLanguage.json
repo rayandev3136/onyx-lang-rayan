@@ -1,0 +1,154 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Onyx",
+    "scopeName": "source.onyx",
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#numbers" },
+        { "include": "#keywords" },
+        { "include": "#builtin_types" },
+        { "include": "#builtins" },
+        { "include": "#constants" },
+        { "include": "#operators" },
+        { "include": "#punctuation" }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.onyx",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.block.onyx",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.onyx",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.onyx",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.onyx",
+                    "match": "\\b\\d+\\.\\d+\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.onyx",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.onyx",
+                    "match": "\\b(if|else|while|for|in|return|break|continue|match|use)\\b"
+                },
+                {
+                    "name": "keyword.declaration.onyx",
+                    "match": "\\b(set|const|fn)\\b"
+                },
+                {
+                    "name": "keyword.operator.logical.onyx",
+                    "match": "\\b(and|or|not)\\b"
+                }
+            ]
+        },
+        "builtin_types": {
+            "patterns": [
+                {
+                    "name": "support.type.builtin.onyx",
+                    "match": "\\b(int|float|string|bool|none|any|list|dict)\\b(?![a-zA-Z0-9_])"
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.onyx",
+                    "match": "\\b(say|ask|str|int|float|len|range|push|pop|keys|values|has|native)\\b(?=\\s*\\()"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.onyx",
+                    "match": "\\b(true|false)\\b"
+                },
+                {
+                    "name": "constant.language.none.onyx",
+                    "match": "\\bNone\\b"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.comparison.onyx",
+                    "match": "==|!=|<=|>=|<|>"
+                },
+                {
+                    "name": "keyword.operator.range.onyx",
+                    "match": "\\.\\."
+                },
+                {
+                    "name": "keyword.operator.arrow.onyx",
+                    "match": "->|=>"
+                },
+                {
+                    "name": "keyword.operator.assignment.onyx",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.operator.arithmetic.onyx",
+                    "match": "\\+|-|\\*|/"
+                },
+                {
+                    "name": "keyword.operator.logical.onyx",
+                    "match": "!"
+                }
+            ]
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                    "name": "punctuation.separator.onyx",
+                    "match": "[;:,]"
+                },
+                {
+                    "name": "punctuation.section.parens.onyx",
+                    "match": "[()]"
+                },
+                {
+                    "name": "punctuation.section.brackets.onyx",
+                    "match": "[\\[\\]]"
+                },
+                {
+                    "name": "punctuation.section.braces.onyx",
+                    "match": "[{}]"
+                },
+                {
+                    "name": "punctuation.accessor.onyx",
+                    "match": "\\."
+                }
+            ]
+        }
+    }
+}

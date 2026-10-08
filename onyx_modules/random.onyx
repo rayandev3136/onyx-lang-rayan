@@ -1,0 +1,11 @@
+// @description أرقام عشوائية: int, float, choice, shuffle
+// @version 0.1.0
+// @author فريق Onyx
+// @license MIT
+
+// وحدة الأرقام العشوائية — Onyx
+
+const int     = native("random.int");
+const float   = native("random.float");
+const choice  = native("random.choice");
+const shuffle = native("random.shuffle");

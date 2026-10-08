@@ -1,0 +1,92 @@
+// اختبار الوحدات: string + random + io
+
+say("═══════════════════════════════════");
+say("   اختبار الوحدات الثلاث");
+say("═══════════════════════════════════\n");
+
+// ═══ 1. وحدة string ═══
+use string;
+
+say("─── string.upper ───");
+say(string.upper("hello onyx"));
+
+say("\n─── string.lower ───");
+say(string.lower("HELLO ONYX"));
+
+say("\n─── string.strip ───");
+say("[" + string.strip("   مسافات   ") + "]");
+
+say("\n─── string.split ───");
+set parts = string.split("أحمد،محمد،علي،سارة", "،");
+say(parts);
+for p in parts {
+    say(" •", p);
+}
+
+say("\n─── string.join ───");
+say(string.join(["أحمد", "محمد", "علي"], " و "));
+
+say("\n─── string.replace ───");
+say(string.replace("مرحبا يا عالم", "عالم", "Onyx"));
+
+say("\n─── string.contains ───");
+say("هل 'Onyx' في 'مرحبا Onyx'؟", string.contains("مرحبا Onyx", "Onyx"));
+say("هل 'Java' في 'مرحبا Onyx'؟", string.contains("مرحبا Onyx", "Java"));
+
+say("\n─── string.startswith / endswith ───");
+say(string.startswith("OnyxLang", "Onyx"));
+say(string.endswith("OnyxLang", "Lang"));
+
+// ═══ 2. وحدة random ═══
+use random;
+
+say("\n─── random.int ───");
+for i in 1..4 {
+    say("رقم عشوائي 1-100:", random.int(1, 100));
+}
+
+say("\n─── random.float ───");
+for i in 1..4 {
+    say("نسبة عشوائية:", random.float());
+}
+
+say("\n─── random.choice ───");
+set colors = ["أحمر", "أخضر", "أزرق", "أصفر"];
+for i in 1..4 {
+    say("لون مختار:", random.choice(colors));
+}
+
+// ═══ 3. وحدة io ═══
+use io;
+
+say("\n─── io.write و io.read ───");
+io.write("onyx_test.txt", "مرحباً من Onyx!\nهذا ملف تجريبي.");
+say("تم الكتابة.");
+
+set content = io.read("onyx_test.txt");
+say("محتوى الملف:");
+say(content);
+
+say("\n─── io.exists ───");
+say("هل الملف موجود؟", io.exists("onyx_test.txt"));
+say("هل onyx.py موجود؟", io.exists("onyx.py"));
+say("هل fake.txt موجود؟", io.exists("fake.txt"));
+
+// ═══ دمج الوحدات ═══
+say("\n═══════════════════════════════════");
+say("   دمج الوحدات");
+say("═══════════════════════════════════");
+
+use math;
+
+fn random_circle_area() {
+    set r = random.int(1, 10);
+    set area = math.pi * math.pow(r, 2);
+    return "دائرة نصف قطرها " + str(r) + " → مساحتها " + str(math.round(area));
+}
+
+for i in 1..4 {
+    say(random_circle_area());
+}
+
+say("\n✅ انتهى الاختبار");

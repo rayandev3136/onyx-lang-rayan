@@ -1,0 +1,11 @@
+// @description الإدخال/الإخراج: read, write, exists, listdir
+// @version 0.1.0
+// @author فريق Onyx
+// @license MIT
+
+// وحدة الإدخال/الإخراج — Onyx
+
+const read     = native("io.read");
+const write    = native("io.write");
+const exists   = native("io.exists");
+const listdir  = native("io.listdir");

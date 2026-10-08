@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Onyx: تشغيل الملف",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/onyx.py",
+                "run",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true,
+                "focus": false,
+                "echo": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Onyx: فحص الملف",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/onyx.py",
+                "check",
+                "${file}"
+            ],
+            "group": "test",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+                "clear": true,
+                "focus": false,
+                "echo": false
+            },
+            "problemMatcher": {
+                "owner": "onyx",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*?):(\\d+):(\\d+):\\s+(error|warning|info):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+// @description OS utilities: cwd, listdir, mkdir, remove, path_exists, is_file, is_dir
+// @version 0.1.0
+// @author Onyx Team
+// @license MIT
+
+// OS utilities
+
+const cwd          = native("os.cwd");
+const listdir      = native("os.listdir");
+const mkdir        = native("os.mkdir");
+const remove       = native("os.remove");
+const path_exists  = native("os.path_exists");
+const is_file      = native("os.is_file");
+const is_dir       = native("os.is_dir");

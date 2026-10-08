@@ -1,0 +1,26 @@
+// @description دوال رياضية: sqrt, pow, sin, cos, tan, log, floor, ceil, abs, round, min, max
+// @version 0.1.0
+// @author فريق Onyx
+// @license MIT
+
+// وحدة الرياضيات — Onyx
+
+// --- دوال أصلية (من Python) ---
+const sqrt  = native("math.sqrt");
+const pow   = native("math.pow");
+const sin = native("math.sin");
+const cos   = native("math.cos");
+const tan   = native("math.tan");
+const log   = native("math.log");
+const log10 = native("math.log10");
+const exp   = native("math.exp");
+const floor = native("math.floor");
+const ceil  = native("math.ceil");
+const abs   = native("math.abs");
+const round = native("math.round");
+const min   = native("math.min");
+const max   = native("math.max");
+
+// --- ثوابت ---
+const pi = 3.141592653589793;
+const e  = 2.718281828459045;

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Onyx
+.onyx_cache/
+*.onyx_cache
+
+# IDE
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp files
+*.log
+onyx_test.txt
+test_dir/
+
+# Playground (work in progress)
+playground/pyodide/
+playground/*.tar.bz2

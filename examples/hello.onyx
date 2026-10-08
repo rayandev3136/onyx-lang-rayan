@@ -1,0 +1,13 @@
+use math;
+
+say("Hello, Onyx!");
+
+set radius = 5;
+set area = math.pi * math.pow(radius, 2);
+say("Area:", area);
+
+fn greet(name) {
+    return "Hello, " + name + "!";
+}
+
+say(greet("world"));

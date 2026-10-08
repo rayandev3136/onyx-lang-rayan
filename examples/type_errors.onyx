@@ -1,0 +1,17 @@
+// ⚠️ هذا الملف مصمّم لإظهار أخطاء الفحص النوعي
+// سيُظهر عدة أخطاء وسيتوقف التنفيذ
+
+set x: int = "نص";      // ❌ string لا يمكن إسناده إلى int
+set y: int = 3.14;      // ❌ float لا يمكن إسناده إلى int
+
+fn add(a: int, b: int) -> int {
+    return a + b;
+}
+
+add("a", 2);            // ❌ وسيط نصي
+add(1);                 // ❌ عدد وسائط خاطئ
+
+set nums: list[int] = [1, 2, 3];
+set bad: string = nums; // ❌ list لا يمكن إسناده إلى string
+
+say(undefined_var);     // ❌ متغير غير معرّف

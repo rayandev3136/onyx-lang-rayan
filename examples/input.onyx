@@ -1,0 +1,48 @@
+// Testing empty variables and typed input
+
+// --- 1. Empty declarations (like C++ int g;) ---
+set count: int;
+set price: float;
+set message: string;
+set active: bool;
+set items: list;
+set data: dict;
+
+say("== Default values ==");
+say("count:  ", count);
+say("price:  ", price);
+say("message:[" + message + "]");
+say("active: ", active);
+say("items:  ", items);
+say("data:   ", data);
+
+// --- 2. Assign values later ---
+count = 42;
+price = 19.99;
+message = "Hello, Onyx!";
+active = true;
+
+say("");
+say("== After assignment ==");
+say("count =", count);
+say("price =", price);
+say("message =", message);
+say("active =", active);
+
+// --- 3. ask with type hints ---
+say("");
+say("== Typed input ==");
+set age = ask("Your age: ", "int");
+say("Next year you will be", age + 1);
+
+set score = ask("Your score (0-100): ", "float");
+say("Score * 2 =", score * 2);
+
+set name = ask("Your name: ");
+say("Welcome,", name + "!");
+
+// --- 4. Traditional approach ---
+say("");
+say("== Manual conversion ==");
+set value = int(ask("Enter a number: "));
+say("value + 10 =", value + 10);

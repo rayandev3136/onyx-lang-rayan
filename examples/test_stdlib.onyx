@@ -1,0 +1,99 @@
+// Test the extended standard library
+
+say("=== Extended Standard Library ===\n");
+
+// --- list ---
+use list;
+
+say("--- list.sort ---");
+set nums = [5, 2, 8, 1, 9, 3];
+say("before:", nums);
+list.sort(nums);
+say("after: ", nums);
+
+say("\n--- list.reverse ---");
+set items = [1, 2, 3, 4, 5];
+say("before:", items);
+list.reverse(items);
+say("after: ", items);
+
+say("\n--- list.contains / index_of ---");
+say("contains(nums, 5):", list.contains(nums, 5));
+say("contains(nums, 100):", list.contains(nums, 100));
+say("index_of(nums, 8):", list.index_of(nums, 8));
+
+say("\n--- list.slice ---");
+say("slice(nums, 1, 4):", list.slice(nums, 1, 4));
+
+say("\n--- list.first / last ---");
+say("first:", list.first(nums));
+say("last: ", list.last(nums));
+
+say("\n--- list.concat ---");
+say("concat([1,2], [3,4]):", list.concat([1, 2], [3, 4]));
+
+say("\n--- list.sum / min / max ---");
+say("sum:", list.sum(nums));
+say("min:", list.min(nums));
+say("max:", list.max(nums));
+
+// --- dict ---
+use dict;
+
+say("\n--- dict.merge ---");
+set a = {"name": "Onyx", "version": 1};
+set b = {"year": 2026, "lang": "ar"};
+set merged = dict.merge(a, b);
+say("merged:", merged);
+
+say("\n--- dict.get with default ---");
+say("get(a, 'name', 'unknown'):", dict.get(a, "name", "unknown"));
+say("get(a, 'foo', 'fallback'):", dict.get(a, "foo", "fallback"));
+
+say("\n--- dict.items ---");
+say("items(a):", dict.items(a));
+
+say("\n--- dict.remove ---");
+set temp = {"x": 1, "y": 2, "z": 3};
+dict.remove(temp, "y");
+say("after remove 'y':", temp);
+
+say("\n--- dict.size ---");
+say("size(a):", dict.size(a));
+
+// --- time ---
+use time;
+
+say("\n--- time.now ---");
+set t = time.now();
+say("timestamp:", t);
+
+say("\n--- time.format ---");
+say("today:", time.format(t, "%Y-%m-%d"));
+say("time: ", time.format(t, "%H:%M:%S"));
+
+say("\n--- time.sleep (0.5 seconds) ---");
+set start = time.now();
+time.sleep(0.5);
+set end = time.now();
+say("elapsed:", end - start, "seconds");
+
+// --- os ---
+use os;
+
+say("\n--- os.cwd ---");
+say("current dir:", os.cwd());
+
+say("\n--- os.path_exists / is_file / is_dir ---");
+say("onyx.py exists:", os.path_exists("onyx.py"));
+say("onyx.py is file:", os.is_file("onyx.py"));
+say("onyx_modules is dir:", os.is_dir("onyx_modules"));
+say("fake.txt exists:", os.path_exists("fake.txt"));
+
+say("\n--- os.mkdir / remove ---");
+os.mkdir("test_dir");
+say("test_dir created:", os.is_dir("test_dir"));
+os.remove("test_dir");
+say("test_dir removed:", os.path_exists("test_dir"));
+
+say("\n=== Done ===");

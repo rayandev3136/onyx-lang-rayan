@@ -1,0 +1,24 @@
+// @description معالجة النصوص: upper, lower, split, join, replace, contains
+// @version 0.1.0
+// @author فريق Onyx
+// @license MIT
+
+// وحدة معالجة النصوص — Onyx
+
+// --- تحويل الحالة ---
+const upper = native("string.upper");
+const lower = native("string.lower");
+const strip = native("string.strip");
+
+// --- تقسيم ودمج ---
+const split = native("string.split");
+const join  = native("string.join");
+
+// --- بحث واستبدال ---
+const replace    = native("string.replace");
+const contains   = native("string.contains");
+const startswith = native("string.startswith");
+const endswith   = native("string.endswith");
+
+// --- معلومات ---
+const length = native("string.length");

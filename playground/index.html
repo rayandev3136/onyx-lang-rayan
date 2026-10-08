@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx Playground</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <img src="icon.png" alt="Onyx" class="logo">
+        <div>
+            <h1>Onyx</h1>
+            <span class="tagline">Playground</span>
+        </div>
+    </div>
+    <div class="actions">
+        <select id="examples">
+            <option value="">Load example...</option>
+            <option value="hello">Hello World</option>
+            <option value="math">Math Demo</option>
+            <option value="fib">Fibonacci</option>
+            <option value="fizzbuzz">FizzBuzz</option>
+            <option value="string">String Magic</option>
+        </select>
+        <button id="share-btn" title="Copy share link">Share</button>
+        <button id="clear-btn" title="Clear output">Clear</button>
+        <button id="run-btn" class="primary" disabled>Run &#9654;</button>
+    </div>
+</header>
+
+<main>
+    <section class="editor-pane">
+        <div class="pane-header">Code</div>
+        <textarea id="editor" spellcheck="false" placeholder="// Write your Onyx code here..."></textarea>
+    </section>
+    <section class="output-pane">
+        <div class="pane-header">Output</div>
+        <pre id="output"></pre>
+    </section>
+</main>
+
+<footer>
+    <span id="status">Loading Python runtime...</span>
+    <span class="badge">Onyx v0.4.0</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.5/full/pyodide.js"></script>
+<script>
+    window.ONYX_PYODIDE_INDEX = location.origin + location.pathname.replace(/\/[^\/]*$/, '/pyodide/');
+</script>
+<script src="script.js?v=2"></script>
+
+</body>
+</html>

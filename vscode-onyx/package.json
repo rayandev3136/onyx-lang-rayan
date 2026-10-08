@@ -1,0 +1,40 @@
+{
+    "name": "onyx-language",
+    "displayName": "Onyx Language",
+    "description": "Language support for Onyx: syntax highlighting, brackets, comments",
+    "icon": "icon.png",
+    "version": "0.1.0",
+    "publisher": "onyx-project",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "onyx",
+        "language"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "onyx",
+                "aliases": [
+                    "Onyx",
+                    "onyx"
+                ],
+                "extensions": [
+                    ".onyx"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "onyx",
+                "scopeName": "source.onyx",
+                "path": "./syntaxes/onyx.tmLanguage.json"
+            }
+        ]
+    }
+}
